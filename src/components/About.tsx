@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { education, profile, project, skills } from "@/data/resume";
+import { education, exploring, profile, project, skills } from "@/data/resume";
 import { asset } from "@/lib/asset";
 import { Reveal, SectionHeading } from "./Reveal";
 
@@ -28,10 +28,26 @@ export function Skills() {
   );
 }
 
+export function Exploring() {
+  return (
+    <section id="exploring" className="mx-auto max-w-5xl px-5 py-24 sm:px-8">
+      <SectionHeading index="04" label="Currently exploring" title="What I'm digging into" />
+      <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
+        {exploring.map((e, i) => (
+          <Reveal key={e.title} delay={(i % 2) * 0.1} className="border-t border-border pt-5">
+            <h3 className="font-semibold">{e.title}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted">{e.body}</p>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export function Background() {
   return (
     <section className="mx-auto max-w-5xl px-5 py-24 sm:px-8">
-      <SectionHeading index="04" label="Background" title="Education & earlier projects" />
+      <SectionHeading index="05" label="Background" title="Education & earlier projects" />
       <div className="grid gap-6 md:grid-cols-5">
         <Reveal className="md:col-span-2">
           <div className="h-full rounded-2xl border border-border bg-card p-6">
@@ -79,7 +95,7 @@ export function Contact() {
       <Reveal>
         <div className="relative overflow-hidden rounded-3xl border border-border bg-card px-6 py-16 text-center sm:px-12">
           <div className="glow pointer-events-none absolute -bottom-40 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full" aria-hidden />
-          <p className="relative font-mono text-xs uppercase tracking-widest text-accent">05 · Contact</p>
+          <p className="relative font-mono text-xs uppercase tracking-widest text-accent">06 · Contact</p>
           <h2 className="relative mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">Let&apos;s talk</h2>
           <p className="relative mx-auto mt-4 max-w-xl text-muted">
             Want to chat about AI agents or backend systems? The best way to reach me is email.

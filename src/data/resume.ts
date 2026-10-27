@@ -172,6 +172,37 @@ export const skills = [
   },
 ];
 
+export const exploring = [
+  {
+    title: "Evaluating AI agents",
+    body: "Building small test sets to measure whether an agent's root-cause answers are actually correct, and catching regressions when prompts or tools change.",
+  },
+  {
+    title: "MCP server design",
+    body: "Writing standalone MCP servers in Python, and experimenting with tool descriptions, input schemas, and error handling to see what makes agents pick the right tool.",
+  },
+  {
+    title: "Multi-agent workflows",
+    body: "Comparing a single agent with many tools against a coordinator that hands work to specialized sub-agents (for example, logs vs. docs vs. HAR analysis).",
+  },
+  {
+    title: "Retrieval over technical docs",
+    body: "Testing chunking, hybrid keyword and vector search, and re-ranking on messy enterprise documentation, beyond managed data stores.",
+  },
+  {
+    title: "LLM security",
+    body: "Prompt injection through tool outputs and logs, PII handling, and guardrails. This follows on from the Model Armor and redaction work.",
+  },
+  {
+    title: "AI-assisted development",
+    body: "Using AI on real refactors, code changes and everyday development, noting where they save time and where they need review.",
+  },
+  {
+    title: "On-prem vs. cloud AI hosting",
+    body: "Comparing self-hosted with managed cloud AI services for enterprise use, and weighing data privacy, security, and regulatory requirements against cost, ease of use, and model quality.",
+  },
+];
+
 export const education = {
   school: "University of Ottawa",
   degree: "B.A.Sc. Software Engineering",
