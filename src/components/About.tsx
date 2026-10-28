@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { education, exploring, profile, project, skills } from "@/data/resume";
+import type { CSSProperties } from "react";
+import { arApp, education, exploring, profile, project, skills } from "@/data/resume";
 import { asset } from "@/lib/asset";
 import { Reveal, SectionHeading } from "./Reveal";
 
@@ -81,6 +82,55 @@ export function Background() {
                   </a>
                 ))}
               </div>
+            </div>
+          </article>
+        </Reveal>
+        <Reveal delay={0.1} className="md:col-span-5">
+          <article className="overflow-hidden rounded-2xl border border-border bg-card">
+            <div className="grid gap-6 p-6 md:grid-cols-5">
+              <div className="md:col-span-2">
+                <p className="font-mono text-xs uppercase tracking-widest text-muted">{arApp.subtitle}</p>
+                <h3 className="mt-2 text-xl font-semibold">{arApp.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{arApp.body}</p>
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {arApp.stack.map((s) => (
+                    <li key={s} className="rounded-lg border border-border px-2.5 py-1 font-mono text-xs text-muted">
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <ul className="space-y-2 text-sm leading-relaxed text-muted md:col-span-3">
+                {arApp.points.map((p) => (
+                  <li key={p} className="flex gap-3">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden />
+                    <span>{p}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* Column widths follow each image's aspect ratio so the row lines up at one height on wider screens. */}
+            <div
+              className="grid grid-cols-2 gap-1 bg-black sm:grid-cols-[var(--cols)]"
+              style={{ "--cols": arApp.images.map((img) => `${img.width / img.height}fr`).join(" ") } as CSSProperties}
+            >
+              {arApp.images.map((img) => {
+                const portrait = img.height > img.width;
+                return (
+                  <div
+                    key={img.src}
+                    className={`overflow-hidden sm:col-span-1 ${portrait ? "aspect-[9/16] sm:aspect-auto" : "col-span-2"}`}
+                  >
+                    <Image
+                      src={asset(img.src)}
+                      alt={img.alt}
+                      width={img.width}
+                      height={img.height}
+                      className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                  </div>
+                );
+              })}
             </div>
           </article>
         </Reveal>

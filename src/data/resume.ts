@@ -127,7 +127,7 @@ export const experience: Job[] = [
     logo: "/images/logos/crc.png",
     url: "https://ised-isde.canada.ca/site/communications-research-centre-canada/en",
     points: [
-      "Co-developed an Android AR app on AWS (Lambda, API Gateway, RDS, S3), explored TensorFlow-based ML features, and documented the solution for handoff.",
+      "Co-developed an Android AR app on AWS (Lambda, API Gateway, RDS, S3) that displayed live research data in AR, and presented it to CRC executives and Canada's Minister of Science.",
     ],
   },
 ];
@@ -218,5 +218,24 @@ export const project = {
   links: [
     { label: "Play on itch.io", href: "https://dungeoneerproject.itch.io/dungeoneer-project" },
     { label: "GitHub", href: "https://github.com/AndreiBaetica/Dungeoneer" },
+  ],
+};
+
+export const arApp = {
+  title: "Augmented Reality data viewer",
+  subtitle: "Communications Research Centre Canada · Co-op 2018",
+  body: "An Android AR app built from scratch by a team of three co-op students. It connected to CRC's Virtual Research Domain servers and placed live government, research, and environmental data around you in AR.",
+  points: [
+    "Android app in Java and XML, tested on emulators, VMs, and physical devices.",
+    "AWS backend with Lambda and API Gateway, and RDS (MySQL) and S3 to store and combine datasets.",
+    "Prototyped TensorFlow-based machine learning features.",
+    "Presented a live demo to CRC's President and executives, DND executives, and Canada's Minister of Science.",
+  ],
+  stack: ["Android", "Java", "AWS Lambda", "API Gateway", "RDS", "S3", "TensorFlow"],
+  images: [
+    { src: "/images/arapp/arapp1.jpg", width: 1280, height: 696, alt: "AR marker over the Supreme Court of Canada with a distance scale" },
+    { src: "/images/arapp/arapp2.jpg", width: 528, height: 936, alt: "AR markers showing nearby washrooms with distance, address, and hours" },
+    { src: "/images/arapp/arapp4.jpg", width: 430, height: 800, alt: "App menu for toggling data layers such as cell towers, Wi-Fi, tourism, and parks" },
+    { src: "/images/arapp/arapp3.jpg", width: 1280, height: 687, alt: "AR view of downtown Ottawa with markers for parks, fountains, and transit stations" },
   ],
 };
